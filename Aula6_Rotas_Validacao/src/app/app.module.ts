@@ -8,6 +8,8 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ValidacaoComponent } from './components/validacao/validacao.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     HomeComponent,
     AboutComponent,
     FooterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ValidacaoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

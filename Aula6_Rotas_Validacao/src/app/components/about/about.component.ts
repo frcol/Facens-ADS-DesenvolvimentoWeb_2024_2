@@ -16,4 +16,8 @@ export class AboutComponent {
     this.id = this.router.snapshot.params['id'];
     this.nome = this.router.snapshot.params['nome'];
   }
+
+  ngOninit() {
+
+  }
 }

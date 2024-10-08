@@ -1,0 +1,17 @@
+<div class="container w-50">
+  <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" class="form-control" ngModel required email	#email="ngModel">
+
+      <div *ngIf="myForm.submitted && email.errors" class="alert alert-danger" role="alert">
+        <div *ngIf="email.errors['required']">Email é obrigatório</div>
+        <div *ngIf="email.errors['email']">E-mail é inválido</div>
+      </div>
+
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
