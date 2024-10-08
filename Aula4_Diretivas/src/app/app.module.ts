@@ -8,6 +8,7 @@ import { Exercicio1Component } from './components/exercicio-1/exercicio-1.compon
 import { Exercicio2Component } from './components/exercicio-2/exercicio-2.component';
 import { Exercicio3Component } from './components/exercicio-3/exercicio-3.component';
 import { Exercicio4Component } from './components/exercicio-4/exercicio-4.component';
+import { DiretivasComponent } from './components/diretivas/diretivas.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { Exercicio4Component } from './components/exercicio-4/exercicio-4.compon
     Exercicio1Component,
     Exercicio2Component,
     Exercicio3Component,
-    Exercicio4Component
+    Exercicio4Component,
+    DiretivasComponent
    ],
   imports: [
     BrowserModule,

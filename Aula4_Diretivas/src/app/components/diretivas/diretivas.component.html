@@ -1,0 +1,12 @@
+<main class="d-flex flex-column align-items-center mt-5" >
+  <h1>LISTA DE PESSOAS</h1>
+  <ul style="width: 300px; list-style-type: none; padding-left: 0px;" >
+    <div *ngFor="let item of pessoas; even as odd"  class="d-flex justify-content-between align-items-center px-2"
+    [ngStyle]="{'background-color': odd?'lightgray':''}">
+      <li [ngStyle]="{'color': item.ativo?'black':'gray', 'text-decoration':item.ativo?'none':'line-through'}">
+        {{item.nome}} ({{item.idade}})
+      </li>
+      <button class="btn py-0 my-1"  [ngClass]="{'btn-primary': item.ativo, 'btn-secondary': !item.ativo }" (click)="ativar(item)">{{item.ativo?'Confirmar':'Ativar'}}</button>
+    </div>
+  </ul>
+</main>

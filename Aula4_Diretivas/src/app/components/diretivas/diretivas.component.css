@@ -1,0 +1,9 @@
+
+.ativo {
+    color: blue;
+}
+
+.desativado {
+    color: red;
+    text-decoration: line-through;
+}
