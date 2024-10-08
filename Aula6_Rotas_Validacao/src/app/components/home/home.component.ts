@@ -11,7 +11,7 @@ export class HomeComponent {
 
   constructor(private router:Router) { }
 
-  goToAbout() {
-    this.router.navigate(['/about', 99, 'Fábio Colombini']);
+  goToAbout(id:number, nome:string) {
+    this.router.navigate(['/about', id, nome]);
   }
 }
