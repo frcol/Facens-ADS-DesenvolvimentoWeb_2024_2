@@ -1,4 +1,4 @@
-<div class="container w-50">
+<!-- <div class="container w-50">
   <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
 
     <div class="form-group">
@@ -13,5 +13,24 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
-</div>
+</div> -->
+
+<div class="container w-50">
+  <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" class="form-control" ngModel required
+      [ngClass]="{'is-invalid': nome.invalid && myForm.submitted}" #nome="ngModel">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" class="form-control" ngModel required email
+      [ngClass]="{'is-invalid': email.invalid && myForm.submitted}" #email="ngModel">
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+      Submit
+    </button>
+  </form>
 
