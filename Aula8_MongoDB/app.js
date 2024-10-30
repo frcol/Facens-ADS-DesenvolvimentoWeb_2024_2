@@ -7,6 +7,8 @@ app.use(express.json());
 // ====================================
 const usuarioController = require('./controllers/usuarioController');
 app.use('/usuarios', usuarioController);
+const postController = require('./controllers/postController');
+app.use('/posts', postController);
 
 // ====================================
 mongoose.connect('mongodb://127.0.0.1:27017/aula10')

@@ -1,5 +1,6 @@
 const express = require('express');
 const Usuario = require('../models/usuario');
+const Post = require('../models/post');
 const router = express.Router();
 
 router.get('/', async (req, res) => {
@@ -23,11 +24,14 @@ router.get('/:id', async (req, res) => {
             return;
         }
 
-        res.status(200).json(usuario);
+        const posts = await Post.find({ autorId: id });  // Pega todos os Posts do Usuário
+
+        res.status(200).json({usuario, posts});
     } catch (error) {
-        res.status(500).json({ error: error });
+        res.status(500).json({ error: error.message });
     }
 });
+
 
 
 router.post('/', async (req, res) => {
@@ -66,7 +70,11 @@ router.patch('/:id', async (req, res) => {
 });
 
 router.delete('/:id', async (req, res) => {
+    const { id } = req.params;
+
     try {
+        await Post.deleteMany({ autorId: id });  // Apaga todos os Posts o Usuário
+
         const usuario = await Usuario.findByIdAndDelete(req.params.id);
         
         if (!usuario) {
@@ -78,6 +86,7 @@ router.delete('/:id', async (req, res) => {
         res.status(500).json({ mensagem: "Erro ao excluir usuário", erro: error.message });
     }
 });
+
 
 
 module.exports = router;
