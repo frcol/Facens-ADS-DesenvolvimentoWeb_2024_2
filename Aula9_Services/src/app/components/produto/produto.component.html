@@ -1,0 +1,28 @@
+<form #form="ngForm" (ngSubmit)="getProdutoById(form)">
+  <input type="text" #id="ngModel" name="id" ngModel>
+  <button type="submit">Buscar</button>
+</form>
+
+<br><br>
+<!-- form para cadastrar produtio -->
+<form #formCadastrar="ngForm" (ngSubmit)="cadastrarProduto(formCadastrar)">
+  <input type="text" #nome="ngModel" name="nome" ngModel>
+  <input type="text" #preco="ngModel" name="preco" ngModel>
+  <button type="submit">Cadastrar</button>
+</form>
+
+<br>
+<!-- form apagar produto por id-->
+<form #formApagar="ngForm" (ngSubmit)="apagarProduto(formApagar)">
+  <input type="text" #idApagar="ngModel" name="id" ngModel>
+  <button type="submit">Apagar</button>
+</form>
+
+<br><br>
+<!-- form para editar produtio -->
+<form #formEditar="ngForm" (ngSubmit)="editarProduto(formEditar)">
+  <input type="text" #idApagar="ngModel" name="id" ngModel>
+  <input type="text" #nome="ngModel" name="nome" ngModel>
+  <input type="text" #preco="ngModel" name="preco" ngModel>
+  <button type="submit">Editar</button>
+</form>
